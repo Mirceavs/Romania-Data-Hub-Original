@@ -31,3 +31,4 @@ Before you begin, make sure you have the following software installed:
    ```bash
    git clone https://github.com/yourusername/budget-dashboard.git
    cd budget-dashboard
+   ```
