@@ -128,3 +128,22 @@ dist
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
+
+# VSCode specific
+.vscode/
+.idea/
+
+# Docker related files
+Dockerfile
+.docker/
+
+# Miscellaneous
+*.pdf
+*.csv
+*.sql
+*.sqlite
+
+# Build directories
+/dist
+/build
+/public
