@@ -1,0 +1,76 @@
+{
+  "id": "inovatie",
+  "name": "Inovație",
+  "description": "Monitorizarea investițiilor în cercetare, dezvoltare și inovare",
+  "ministries": [
+    "Ministerul Cercetării, Inovării și Digitalizării",
+    "Autoritatea pentru Digitalizarea României",
+    "Agenția Națională pentru Cercetare și Dezvoltare"
+  ],
+  "stats": [
+    {
+      "id": "rd_cheltuieli",
+      "label": "Cheltuieli R&D",
+      "value": "0.51% din PIB",
+      "change": "+0.05pp față de anul trecut",
+      "changeType": "positive",
+      "icon": "FlaskConical"
+    },
+    {
+      "id": "brevete",
+      "label": "Brevete depuse",
+      "value": "1,234",
+      "change": "+156 față de anul trecut",
+      "changeType": "positive",
+      "icon": "Lightbulb"
+    },
+    {
+      "id": "institute",
+      "label": "Institute cercetare",
+      "value": "187",
+      "change": "+12 față de anul trecut",
+      "changeType": "positive",
+      "icon": "Building2"
+    },
+    {
+      "id": "digitalizare",
+      "label": "Servicii digitale",
+      "value": "78.3%",
+      "change": "+8.7% față de anul trecut",
+      "changeType": "positive",
+      "icon": "Smartphone"
+    }
+  ],
+  "chartData": [
+    {
+      "year": "2019",
+      "value": 0.34,
+      "budget": 1200000000
+    },
+    {
+      "year": "2020",
+      "value": 0.37,
+      "budget": 1350000000
+    },
+    {
+      "year": "2021",
+      "value": 0.41,
+      "budget": 1580000000
+    },
+    {
+      "year": "2022",
+      "value": 0.45,
+      "budget": 1780000000
+    },
+    {
+      "year": "2023",
+      "value": 0.46,
+      "budget": 1920000000
+    },
+    {
+      "year": "2024",
+      "value": 0.51,
+      "budget": 2100000000
+    }
+  ]
+}

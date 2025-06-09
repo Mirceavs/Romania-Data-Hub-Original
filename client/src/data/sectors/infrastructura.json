@@ -1,0 +1,76 @@
+{
+  "id": "infrastructura",
+  "name": "Infrastructură",
+  "description": "Monitorizarea investițiilor în infrastructura de transport și dezvoltare urbană",
+  "ministries": [
+    "Ministerul Transporturilor și Infrastructurii",
+    "Ministerul Dezvoltării, Lucrărilor Publice și Administrației",
+    "Compania Națională de Autostrăzi și Drumuri Naționale"
+  ],
+  "stats": [
+    {
+      "id": "autostrazi",
+      "label": "Km autostradă",
+      "value": "921 km",
+      "change": "+67 km față de anul trecut",
+      "changeType": "positive",
+      "icon": "Car"
+    },
+    {
+      "id": "locuinte",
+      "label": "Locuințe sociale",
+      "value": "12,456",
+      "change": "+1,234 față de anul trecut",
+      "changeType": "positive",
+      "icon": "Home"
+    },
+    {
+      "id": "reciclare",
+      "label": "Rate reciclare",
+      "value": "14.2%",
+      "change": "+2.1% față de anul trecut",
+      "changeType": "positive",
+      "icon": "RotateCcw"
+    },
+    {
+      "id": "arii_protejate",
+      "label": "Arii protejate",
+      "value": "23.4%",
+      "change": "+0.8% față de anul trecut",
+      "changeType": "positive",
+      "icon": "Trees"
+    }
+  ],
+  "chartData": [
+    {
+      "year": "2019",
+      "value": 747,
+      "budget": 8500000000
+    },
+    {
+      "year": "2020",
+      "value": 803,
+      "budget": 9200000000
+    },
+    {
+      "year": "2021",
+      "value": 830,
+      "budget": 10100000000
+    },
+    {
+      "year": "2022",
+      "value": 852,
+      "budget": 11800000000
+    },
+    {
+      "year": "2023",
+      "value": 854,
+      "budget": 12300000000
+    },
+    {
+      "year": "2024",
+      "value": 921,
+      "budget": 13500000000
+    }
+  ]
+}

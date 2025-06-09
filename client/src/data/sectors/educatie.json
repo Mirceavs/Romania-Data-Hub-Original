@@ -1,0 +1,76 @@
+{
+  "id": "educatie",
+  "name": "Educație",
+  "description": "Monitorizarea fondurilor publice alocate sistemului educațional din România",
+  "ministries": [
+    "Ministerul Educației",
+    "Ministerul Cercetării, Inovării și Digitalizării",
+    "Ministerul Tineretului și Sportului"
+  ],
+  "stats": [
+    {
+      "id": "scoli",
+      "label": "Numărul total de școli",
+      "value": "8,234",
+      "change": "+47 față de anul trecut",
+      "changeType": "positive",
+      "icon": "Building"
+    },
+    {
+      "id": "profesori",
+      "label": "Numărul de profesori",
+      "value": "234,567",
+      "change": "+1,234 față de anul trecut",
+      "changeType": "positive",
+      "icon": "Users"
+    },
+    {
+      "id": "elevi",
+      "label": "Numărul de elevi",
+      "value": "2.8M",
+      "change": "-12,000 față de anul trecut",
+      "changeType": "negative",
+      "icon": "GraduationCap"
+    },
+    {
+      "id": "buget",
+      "label": "Buget educație",
+      "value": "18.5 Mrd RON",
+      "change": "+8.2% față de anul trecut",
+      "changeType": "positive",
+      "icon": "DollarSign"
+    }
+  ],
+  "chartData": [
+    {
+      "year": "2019",
+      "value": 2850000,
+      "budget": 15200000000
+    },
+    {
+      "year": "2020",
+      "value": 2820000,
+      "budget": 16100000000
+    },
+    {
+      "year": "2021",
+      "value": 2810000,
+      "budget": 16800000000
+    },
+    {
+      "year": "2022",
+      "value": 2805000,
+      "budget": 17200000000
+    },
+    {
+      "year": "2023",
+      "value": 2812000,
+      "budget": 17100000000
+    },
+    {
+      "year": "2024",
+      "value": 2800000,
+      "budget": 18500000000
+    }
+  ]
+}

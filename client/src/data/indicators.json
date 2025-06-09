@@ -1,0 +1,74 @@
+[
+  {
+    "id": "populatie",
+    "label": "Populație",
+    "value": "19.2M",
+    "trend": "+0.2%",
+    "trendType": "positive",
+    "lastUpdate": "1 Dec 2024",
+    "category": "population"
+  },
+  {
+    "id": "pib",
+    "label": "PIB",
+    "value": "€284.1Mrd",
+    "trend": "+3.1%",
+    "trendType": "positive",
+    "lastUpdate": "28 Nov 2024",
+    "category": "economy"
+  },
+  {
+    "id": "somaj",
+    "label": "Rata șomajului",
+    "value": "5.2%",
+    "trend": "-0.5%",
+    "trendType": "positive",
+    "lastUpdate": "30 Nov 2024",
+    "category": "employment"
+  },
+  {
+    "id": "spitale",
+    "label": "Spitale publice",
+    "value": "542",
+    "trend": "+12",
+    "trendType": "positive",
+    "lastUpdate": "5 Dec 2024",
+    "category": "healthcare"
+  },
+  {
+    "id": "scoli",
+    "label": "Școli publice",
+    "value": "8,234",
+    "trend": "+47",
+    "trendType": "positive",
+    "lastUpdate": "3 Dec 2024",
+    "category": "education"
+  },
+  {
+    "id": "curs_euro",
+    "label": "EUR/RON",
+    "value": "4.92",
+    "trend": "4.92",
+    "trendType": "neutral",
+    "lastUpdate": "12 Dec 2024",
+    "category": "currency"
+  },
+  {
+    "id": "angajati_publici",
+    "label": "Angajați publici",
+    "value": "1.24M",
+    "trend": "+2.3%",
+    "trendType": "positive",
+    "lastUpdate": "29 Nov 2024",
+    "category": "public"
+  },
+  {
+    "id": "investitii_publice",
+    "label": "Investiții publice",
+    "value": "42.3 Mrd RON",
+    "trend": "+15.2%",
+    "trendType": "positive",
+    "lastUpdate": "10 Dec 2024",
+    "category": "economy"
+  }
+]

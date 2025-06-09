@@ -1,0 +1,76 @@
+{
+  "id": "sanatate",
+  "name": "Sănătate",
+  "description": "Monitorizarea fondurilor publice alocate sistemului de sănătate din România",
+  "ministries": [
+    "Ministerul Sănătății",
+    "Casa Națională de Asigurări de Sănătate",
+    "Agenția Națională a Medicamentului"
+  ],
+  "stats": [
+    {
+      "id": "spitale",
+      "label": "Spitale publice",
+      "value": "542",
+      "change": "+12 față de anul trecut",
+      "changeType": "positive",
+      "icon": "Building2"
+    },
+    {
+      "id": "medici",
+      "label": "Medici activi",
+      "value": "65,234",
+      "change": "+2,156 față de anul trecut",
+      "changeType": "positive",
+      "icon": "UserCheck"
+    },
+    {
+      "id": "ambulante",
+      "label": "Ambulanțe",
+      "value": "1,245",
+      "change": "+89 față de anul trecut",
+      "changeType": "positive",
+      "icon": "Truck"
+    },
+    {
+      "id": "buget",
+      "label": "Buget sănătate",
+      "value": "22.1 Mrd RON",
+      "change": "+12.3% față de anul trecut",
+      "changeType": "positive",
+      "icon": "DollarSign"
+    }
+  ],
+  "chartData": [
+    {
+      "year": "2019",
+      "value": 62000,
+      "budget": 18500000000
+    },
+    {
+      "year": "2020",
+      "value": 63100,
+      "budget": 19200000000
+    },
+    {
+      "year": "2021",
+      "value": 63800,
+      "budget": 19800000000
+    },
+    {
+      "year": "2022",
+      "value": 64200,
+      "budget": 20100000000
+    },
+    {
+      "year": "2023",
+      "value": 65078,
+      "budget": 21300000000
+    },
+    {
+      "year": "2024",
+      "value": 65234,
+      "budget": 22100000000
+    }
+  ]
+}

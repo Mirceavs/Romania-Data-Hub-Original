@@ -1,0 +1,50 @@
+[
+  {
+    "id": "1",
+    "title": "Actualizare buget educație 2024",
+    "summary": "Datele privind execuția bugetară pentru sectorul educație au fost actualizate cu informațiile din trimestrul IV.",
+    "category": "Educație",
+    "date": "12 Dec 2024",
+    "url": "/sector/educatie"
+  },
+  {
+    "id": "2",
+    "title": "Raport spitale publice",
+    "summary": "Publicarea datelor actualizate privind numărul de spitale publice și personalul medical din România.",
+    "category": "Sănătate",
+    "date": "10 Dec 2024",
+    "url": "/sector/sanatate"
+  },
+  {
+    "id": "3",
+    "title": "Progres autostrăzi 2024",
+    "summary": "Situația actualizată a kilometrilor de autostradă construiți și în construcție pe teritoriul României.",
+    "category": "Infrastructură",
+    "date": "8 Dec 2024",
+    "url": "/sector/infrastructura"
+  },
+  {
+    "id": "4",
+    "title": "Execuție bugetară T3 2024",
+    "summary": "Analiza detaliată a execuției bugetare pe sectoare pentru trimestrul al treilea din 2024.",
+    "category": "Economie",
+    "date": "5 Dec 2024",
+    "url": "/sector/economie"
+  },
+  {
+    "id": "5",
+    "title": "Investiții în energie regenerabilă",
+    "summary": "Raportul cu privire la proiectele de energie regenerabilă finanțate din fonduri publice în 2024.",
+    "category": "Energie",
+    "date": "3 Dec 2024",
+    "url": "/sector/energie"
+  },
+  {
+    "id": "6",
+    "title": "Digitalizarea serviciilor publice",
+    "summary": "Progresul în implementarea serviciilor digitale și noi platforme pentru cetățeni în 2024.",
+    "category": "Inovație",
+    "date": "1 Dec 2024",
+    "url": "/sector/inovatie"
+  }
+]

@@ -1,0 +1,76 @@
+{
+  "id": "economie",
+  "name": "Economie",
+  "description": "Monitorizarea indicatorilor economici și a execuției bugetare la nivel național",
+  "ministries": [
+    "Ministerul Finanțelor Publice",
+    "Ministerul Economiei",
+    "Banca Națională a României"
+  ],
+  "stats": [
+    {
+      "id": "pib",
+      "label": "PIB",
+      "value": "284.1 Mrd EUR",
+      "change": "+3.1% față de anul trecut",
+      "changeType": "positive",
+      "icon": "TrendingUp"
+    },
+    {
+      "id": "deficit",
+      "label": "Deficit bugetar",
+      "value": "-5.7% din PIB",
+      "change": "+0.2pp față de anul trecut",
+      "changeType": "negative",
+      "icon": "TrendingDown"
+    },
+    {
+      "id": "executie",
+      "label": "Execuție bugetară",
+      "value": "92.3%",
+      "change": "+1.8% față de anul trecut",
+      "changeType": "positive",
+      "icon": "Target"
+    },
+    {
+      "id": "datorie",
+      "label": "Datorie publică",
+      "value": "48.9% din PIB",
+      "change": "+1.2pp față de anul trecut",
+      "changeType": "negative",
+      "icon": "AlertTriangle"
+    }
+  ],
+  "chartData": [
+    {
+      "year": "2019",
+      "value": 223800000000,
+      "budget": 223800000000
+    },
+    {
+      "year": "2020",
+      "value": 200100000000,
+      "budget": 200100000000
+    },
+    {
+      "year": "2021",
+      "value": 220500000000,
+      "budget": 220500000000
+    },
+    {
+      "year": "2022",
+      "value": 263400000000,
+      "budget": 263400000000
+    },
+    {
+      "year": "2023",
+      "value": 275600000000,
+      "budget": 275600000000
+    },
+    {
+      "year": "2024",
+      "value": 284100000000,
+      "budget": 284100000000
+    }
+  ]
+}
