@@ -28,16 +28,16 @@ export default function Sector() {
 
   if (!sectorId || !sectorDataMap[sectorId]) {
     return (
-      <div className="min-h-screen bg-background">
+      <div className="min-h-screen bg-background text-foreground">
         <Navbar />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-          <Card className="w-full max-w-md mx-auto">
+          <Card className="w-full max-w-md mx-auto bg-muted/30 rounded-xl border border-border">
             <CardContent className="pt-6">
-              <div className="flex mb-4 gap-2">
-                <AlertCircle className="h-8 w-8 text-red-500" />
-                <h1 className="text-2xl font-bold text-gray-900">Sector inexistent</h1>
+              <div className="flex mb-4 gap-2 items-center">
+                <AlertCircle className="h-8 w-8 text-destructive" />
+                <h1 className="text-2xl font-bold">Sector inexistent</h1>
               </div>
-              <p className="mt-4 text-sm text-gray-600">
+              <p className="mt-4 text-sm text-muted-foreground">
                 Sectorul solicitat nu a fost găsit. Vă rugăm să verificați URL-ul sau să navigați la un sector valid.
               </p>
             </CardContent>
@@ -51,7 +51,7 @@ export default function Sector() {
   const sectorData = sectorDataMap[sectorId];
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background text-foreground">
       <Navbar />
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <SectorStats sectorData={sectorData} />

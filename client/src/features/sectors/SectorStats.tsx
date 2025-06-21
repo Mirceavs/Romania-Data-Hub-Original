@@ -4,10 +4,13 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import StatCard from "@/components/StatCard";
 import DownloadButton from "@/components/DownloadButton";
 import MinistryFilter from "@/components/MinistryFilter";
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, BarChart, Bar } from "recharts";
+import {
+  LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip,
+  ResponsiveContainer, BarChart, Bar
+} from "recharts";
 import { formatNumber } from "@/utils/formatNumber";
-import { 
-  Building, Users, GraduationCap, DollarSign, Building2, UserCheck, Truck, 
+import {
+  Building, Users, GraduationCap, DollarSign, Building2, UserCheck, Truck,
   TrendingUp, TrendingDown, Target, AlertTriangle, Car, Home, RotateCcw, Trees,
   Zap, Leaf, Gauge, Battery, FlaskConical, Lightbulb, Smartphone
 } from "lucide-react";
@@ -50,12 +53,12 @@ export default function SectorStats({ sectorData }: SectorStatsProps) {
   };
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-6 text-foreground">
       {/* Header */}
       <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
         <div>
-          <h1 className="text-3xl font-bold text-gray-900">{sectorData.name}</h1>
-          <p className="text-lg text-gray-600 mt-2">{sectorData.description}</p>
+          <h1 className="text-3xl font-bold">{sectorData.name}</h1>
+          <p className="text-lg text-muted-foreground mt-2">{sectorData.description}</p>
         </div>
         <div className="flex items-center gap-4">
           <MinistryFilter
@@ -72,7 +75,7 @@ export default function SectorStats({ sectorData }: SectorStatsProps) {
 
       {/* Tabs */}
       <Tabs value={activeTab} onValueChange={setActiveTab} className="space-y-6">
-        <TabsList className="grid w-full grid-cols-3">
+        <TabsList className="grid w-full grid-cols-3 bg-muted">
           <TabsTrigger value="overview">Prezentare Generală</TabsTrigger>
           <TabsTrigger value="evolution">Evoluție</TabsTrigger>
           <TabsTrigger value="budget">Buget</TabsTrigger>
@@ -94,9 +97,9 @@ export default function SectorStats({ sectorData }: SectorStatsProps) {
           </div>
 
           {/* Main Chart */}
-          <Card>
+          <Card className="bg-muted/30 rounded-xl border border-border">
             <CardHeader>
-              <CardTitle>Evoluția indicatorilor principali</CardTitle>
+              <CardTitle className="text-lg">Evoluția indicatorilor principali</CardTitle>
             </CardHeader>
             <CardContent>
               <ResponsiveContainer width="100%" height={400}>
@@ -113,9 +116,9 @@ export default function SectorStats({ sectorData }: SectorStatsProps) {
         </TabsContent>
 
         <TabsContent value="evolution" className="space-y-6">
-          <Card>
+          <Card className="bg-muted/30 rounded-xl border border-border">
             <CardHeader>
-              <CardTitle>Evoluție pe ani</CardTitle>
+              <CardTitle className="text-lg">Evoluție pe ani</CardTitle>
             </CardHeader>
             <CardContent>
               <ResponsiveContainer width="100%" height={500}>
@@ -132,9 +135,9 @@ export default function SectorStats({ sectorData }: SectorStatsProps) {
         </TabsContent>
 
         <TabsContent value="budget" className="space-y-6">
-          <Card>
+          <Card className="bg-muted/30 rounded-xl border border-border">
             <CardHeader>
-              <CardTitle>Execuție bugetară</CardTitle>
+              <CardTitle className="text-lg">Execuție bugetară</CardTitle>
             </CardHeader>
             <CardContent>
               <ResponsiveContainer width="100%" height={400}>
