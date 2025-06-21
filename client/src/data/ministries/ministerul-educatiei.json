@@ -1,0 +1,30 @@
+{
+  "id": "educatie",
+  "name": "Ministerul Educației",
+  "description": "Coordonează politicile educaționale și gestionează bugetul alocat instituțiilor de învățământ.",
+  "ministries": ["Ministerul Educației"],
+  "stats": [
+    {
+      "id": "students",
+      "label": "Elevi în sistem",
+      "value": "2.950.000",
+      "change": "+1.2%",
+      "changeType": "positive",
+      "icon": "GraduationCap"
+    },
+    {
+      "id": "budget",
+      "label": "Buget Alocat",
+      "value": "45 MLD RON",
+      "change": "+4.5%",
+      "changeType": "positive",
+      "icon": "DollarSign"
+    }
+  ],
+  "chartData": [
+    { "year": "2020", "value": 41000000, "budget": 37000000 },
+    { "year": "2021", "value": 43000000, "budget": 39000000 },
+    { "year": "2022", "value": 45000000, "budget": 42000000 },
+    { "year": "2023", "value": 47000000, "budget": 45000000 }
+  ]
+}

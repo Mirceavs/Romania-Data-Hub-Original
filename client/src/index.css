@@ -214,3 +214,17 @@
   --card-bg: hsl(0, 0%, 13%);
 }
 
+/* Linkuri principale din navbar */
+.nav-link {
+  @apply flex items-center text-muted-foreground hover:text-primary font-medium transition-colors;
+}
+
+/* Dropdown container */
+.dropdown-content {
+  @apply w-56 bg-popover text-sm rounded-md shadow-md border border-border p-1;
+}
+
+/* Item din dropdown */
+.dropdown-item {
+  @apply w-full px-3 py-2 rounded-md hover:bg-accent hover:text-accent-foreground cursor-pointer transition-colors;
+}

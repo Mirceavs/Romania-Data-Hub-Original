@@ -19,6 +19,13 @@ const sectors = [
   { id: "inovatie", name: "Inovație", icon: "🚀" },
 ];
 
+const ministries = [
+  { id: "educatie", name: "Ministerul Educației" },
+  { id: "sanatate", name: "Ministerul Sănătății" },
+  { id: "finante", name: "Ministerul Finanțelor" },
+  { id: "infrastructura", name: "Ministerul Infrastructurii" },
+];
+
 export default function Navbar() {
   const [location] = useLocation();
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -33,8 +40,12 @@ export default function Navbar() {
               <BarChart3 className="w-6 h-6 text-primary-foreground" />
             </div>
             <div>
-              <h1 className="text-xl font-semibold navbar-text-primary">Romania Data Hub</h1>
-              <p className="navbar-text-muted">Transparența fondurilor publice</p>
+              <h1 className="text-xl font-semibold navbar-text-primary">
+                Romania Data Hub
+              </h1>
+              <p className="navbar-text-muted">
+                Transparența fondurilor publice
+              </p>
             </div>
           </Link>
 
@@ -43,7 +54,9 @@ export default function Navbar() {
             <Link href="/">
               <span
                 className={`navbar-text-default ${
-                  location === "/" ? "navbar-text-primary border-b-2 border-primary pb-1" : ""
+                  location === "/"
+                    ? "navbar-text-primary border-b-2 border-primary pb-1"
+                    : ""
                 }`}
               >
                 Acasă
@@ -53,7 +66,10 @@ export default function Navbar() {
             {/* Sectors Dropdown */}
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <Button variant="ghost" className="navbar-text-default flex items-center">
+                <Button
+                  variant="ghost"
+                  className="navbar-text-default flex items-center"
+                >
                   Sectoare
                   <ChevronDown className="ml-1 w-4 h-4" />
                 </Button>
@@ -73,10 +89,37 @@ export default function Navbar() {
               </DropdownMenuContent>
             </DropdownMenu>
 
+            {/* Ministries Dropdown */}
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button
+                  variant="ghost"
+                  className="navbar-text-default flex items-center"
+                >
+                  Ministere
+                  <ChevronDown className="ml-1 w-4 h-4" />
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent className="w-48 bg-popover text-popover-foreground">
+                {ministries.map((ministry) => (
+                  <DropdownMenuItem key={ministry.id} asChild>
+                    <Link
+                      href={`/minister/${ministry.id}`}
+                      className="flex items-center cursor-pointer navbar-text-default"
+                    >
+                      {ministry.name}
+                    </Link>
+                  </DropdownMenuItem>
+                ))}
+              </DropdownMenuContent>
+            </DropdownMenu>
+
             <Link href="/about">
               <span
                 className={`navbar-text-default ${
-                  location === "/about" ? "navbar-text-primary border-b-2 border-primary pb-1" : ""
+                  location === "/about"
+                    ? "navbar-text-primary border-b-2 border-primary pb-1"
+                    : ""
                 }`}
               >
                 Despre
@@ -86,7 +129,9 @@ export default function Navbar() {
             <Link href="/contact">
               <span
                 className={`navbar-text-default ${
-                  location === "/contact" ? "navbar-text-primary border-b-2 border-primary pb-1" : ""
+                  location === "/contact"
+                    ? "navbar-text-primary border-b-2 border-primary pb-1"
+                    : ""
                 }`}
               >
                 Contact

@@ -1,0 +1,30 @@
+{
+  "id": "finante",
+  "name": "Ministerul Finanțelor",
+  "description": "Responsabil cu bugetul național, fiscalitatea și administrarea fondurilor publice.",
+  "ministries": ["Ministerul Finanțelor"],
+  "stats": [
+    {
+      "id": "revenue",
+      "label": "Venituri Naționale",
+      "value": "390 MLD RON",
+      "change": "+5.2%",
+      "changeType": "positive",
+      "icon": "DollarSign"
+    },
+    {
+      "id": "deficit",
+      "label": "Deficit bugetar",
+      "value": "5.8%",
+      "change": "-0.3%",
+      "changeType": "positive",
+      "icon": "AlertTriangle"
+    }
+  ],
+  "chartData": [
+    { "year": "2020", "value": 320000000, "budget": 370000000 },
+    { "year": "2021", "value": 350000000, "budget": 400000000 },
+    { "year": "2022", "value": 370000000, "budget": 420000000 },
+    { "year": "2023", "value": 390000000, "budget": 450000000 }
+  ]
+}

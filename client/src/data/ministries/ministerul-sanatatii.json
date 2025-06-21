@@ -1,0 +1,30 @@
+{
+  "id": "sanatate",
+  "name": "Ministerul Sănătății",
+  "description": "Administrează sistemul public de sănătate și alocările pentru spitale, medicamente și personal medical.",
+  "ministries": ["Ministerul Sănătății"],
+  "stats": [
+    {
+      "id": "hospitals",
+      "label": "Spitale finanțate",
+      "value": "325",
+      "change": "-2%",
+      "changeType": "negative",
+      "icon": "Home"
+    },
+    {
+      "id": "healthBudget",
+      "label": "Buget Sănătate",
+      "value": "68 MLD RON",
+      "change": "+3.1%",
+      "changeType": "positive",
+      "icon": "DollarSign"
+    }
+  ],
+  "chartData": [
+    { "year": "2020", "value": 62000000, "budget": 60000000 },
+    { "year": "2021", "value": 65000000, "budget": 63000000 },
+    { "year": "2022", "value": 67000000, "budget": 64000000 },
+    { "year": "2023", "value": 68000000, "budget": 67000000 }
+  ]
+}
