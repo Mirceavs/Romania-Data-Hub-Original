@@ -6,7 +6,8 @@
   --background: hsl(240, 10%, 3.9%);
   --foreground: hsl(0, 0%, 98%);
   --muted: hsl(240, 3.7%, 15.9%);
-  --muted-foreground: hsl(240, 5%, 64.9%);
+  --muted-foreground: hsl(0, 0%, 85%);
+  --text-muted-foreground: hsl(0, 0%, 98%);
   --popover: hsl(240, 10%, 3.9%);
   --popover-foreground: hsl(0, 0%, 98%);
   --card: hsl(240, 10%, 3.9%);
@@ -54,6 +55,162 @@
   }
 
   body {
-    @apply font-sans antialiased bg-background text-foreground;
-  }
+  @apply font-sans antialiased bg-background text-foreground;
 }
+}
+
+/* Clasă pentru text principal din Navbar (titluri, linkuri active) */
+.navbar-text-primary {
+  color: var(--primary);
+  font-weight: 600; /* font-semibold */
+}
+
+/* Clasă pentru text normal, vizibil pe fundal întunecat */
+.navbar-text-default {
+  color: var(--card-foreground); /* text alb/gri deschis */
+  font-weight: 500; /* font-medium */
+  transition: color 0.2s ease-in-out;
+}
+
+.navbar-text-default:hover,
+.navbar-text-default:focus {
+  color: var(--primary);
+}
+
+/* Clasă pentru subtitluri / descrieri în Navbar */
+.navbar-text-muted {
+  color: hsl(0, 0%, 70%);
+  font-size: 0.75rem; /* text-xs */
+}
+
+/* Clasă pentru text în meniul mobil */
+.navbar-mobile-text {
+  color: var(--card-foreground);
+  font-weight: 600;
+  font-size: 1.125rem;
+  padding: 0.5rem 0.75rem;
+  display: block;
+  transition: color 0.2s ease-in-out;
+}
+
+
+.navbar-mobile-text:hover,
+.navbar-mobile-text:focus {
+  color: var(--primary);
+}
+
+.page-title {
+  color: var(--foreground);
+  font-size: 1.875rem; /* text-2xl */
+  font-weight: 700;
+}
+
+.page-paragraph {
+  color: var(--muted-foreground);
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+/* Icon & badge backgrounds pentru categorii */
+.indicator-population {
+  --icon-color: hsl(217, 91%, 60%);
+  --icon-bg: hsl(217, 100%, 16%);
+}
+
+.indicator-economy {
+  --icon-color: hsl(142, 76%, 36%);
+  --icon-bg: hsl(142, 70%, 15%);
+}
+
+.indicator-employment {
+  --icon-color: hsl(45, 100%, 51%);
+  --icon-bg: hsl(45, 100%, 15%);
+}
+
+.indicator-healthcare {
+  --icon-color: hsl(265, 80%, 60%);
+  --icon-bg: hsl(265, 60%, 18%);
+}
+
+.indicator-education {
+  --icon-color: hsl(0, 84%, 60%);
+  --icon-bg: hsl(0, 84%, 18%);
+}
+
+.indicator-currency {
+  --icon-color: hsl(252, 100%, 67%);
+  --icon-bg: hsl(252, 100%, 15%);
+}
+
+.indicator-public {
+  --icon-color: hsl(32, 100%, 60%);
+  --icon-bg: hsl(32, 100%, 16%);
+}
+
+.indicator-default {
+  --icon-color: hsl(0, 0%, 70%);
+  --icon-bg: hsl(0, 0%, 25%);
+}
+
+.section-title {
+  color: var(--foreground);
+  font-size: 1.875rem;
+  font-weight: 700;
+}
+
+.section-subtitle {
+  color: var(--muted-foreground);
+  font-size: 1.125rem;
+  max-width: 40rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.indicator-population {
+  --icon-color: hsl(217, 91%, 60%);
+  --icon-bg: hsl(217, 100%, 16%);
+  --card-bg: hsl(217, 20%, 11%);
+}
+
+.indicator-economy {
+  --icon-color: hsl(142, 76%, 36%);
+  --icon-bg: hsl(142, 70%, 15%);
+  --card-bg: hsl(142, 20%, 12%); /* ✅ fundal deschis verde închis */
+}
+
+.indicator-employment {
+  --icon-color: hsl(45, 100%, 51%);
+  --icon-bg: hsl(45, 100%, 15%);
+  --card-bg: hsl(45, 50%, 10%);
+}
+
+.indicator-healthcare {
+  --icon-color: hsl(265, 80%, 60%);
+  --icon-bg: hsl(265, 60%, 18%);
+  --card-bg: hsl(265, 30%, 11%);
+}
+
+.indicator-education {
+  --icon-color: hsl(0, 84%, 60%);
+  --icon-bg: hsl(0, 84%, 18%);
+  --card-bg: hsl(0, 30%, 12%);
+}
+
+.indicator-currency {
+  --icon-color: hsl(252, 100%, 67%);
+  --icon-bg: hsl(252, 100%, 15%);
+  --card-bg: hsl(252, 30%, 11%);
+}
+
+.indicator-public {
+  --icon-color: hsl(32, 100%, 60%);
+  --icon-bg: hsl(32, 100%, 16%);
+  --card-bg: hsl(32, 30%, 11%);
+}
+
+.indicator-default {
+  --icon-color: hsl(0, 0%, 70%);
+  --icon-bg: hsl(0, 0%, 25%);
+  --card-bg: hsl(0, 0%, 13%);
+}
+

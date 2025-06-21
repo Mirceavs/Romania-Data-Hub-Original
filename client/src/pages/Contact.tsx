@@ -8,7 +8,14 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from "@/components/ui/form";
 import { useToast } from "@/hooks/use-toast";
 import { Mail, Phone, MapPin, Send } from "lucide-react";
 
@@ -24,7 +31,7 @@ type ContactFormData = z.infer<typeof contactSchema>;
 export default function Contact() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
-  
+
   const form = useForm<ContactFormData>({
     resolver: zodResolver(contactSchema),
     defaultValues: {
@@ -37,36 +44,35 @@ export default function Contact() {
 
   const onSubmit = async (data: ContactFormData) => {
     setIsSubmitting(true);
-    
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    
+
+    await new Promise((resolve) => setTimeout(resolve, 1000));
+
     toast({
       title: "Mesaj trimis cu succes!",
       description: "Vă vom răspunde în cel mai scurt timp posibil.",
     });
-    
+
     form.reset();
     setIsSubmitting(false);
   };
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background text-foreground">
       <Navbar />
-      
+
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         {/* Hero Section */}
         <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold text-gray-900 mb-6">Contactează-ne</h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Avem întrebări, sugestii sau feedback? Ne-ar face plăcere să auzim de la tine!
+          <h1 className="text-4xl font-bold mb-6">Contactează-ne</h1>
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            Ai întrebări, sugestii sau feedback? Ne-ar face plăcere să auzim de la tine!
           </p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Contact Information */}
           <div className="lg:col-span-1 space-y-6">
-            <Card>
+            <Card className="bg-card rounded-2xl">
               <CardHeader>
                 <CardTitle>Informații de Contact</CardTitle>
               </CardHeader>
@@ -74,24 +80,24 @@ export default function Contact() {
                 <div className="flex items-center space-x-3">
                   <Mail className="w-5 h-5 text-primary" />
                   <div>
-                    <p className="font-medium">Email</p>
-                    <p className="text-gray-600">contact@romaniadatahub.ro</p>
+                    <p className="font-medium text-foreground">Email</p>
+                    <p className="text-muted-foreground">contact@romaniadatahub.ro</p>
                   </div>
                 </div>
-                
+
                 <div className="flex items-center space-x-3">
                   <Phone className="w-5 h-5 text-primary" />
                   <div>
-                    <p className="font-medium">Telefon</p>
-                    <p className="text-gray-600">+40 21 123 4567</p>
+                    <p className="font-medium text-foreground">Telefon</p>
+                    <p className="text-muted-foreground">+40 21 123 4567</p>
                   </div>
                 </div>
-                
+
                 <div className="flex items-center space-x-3">
                   <MapPin className="w-5 h-5 text-primary" />
                   <div>
-                    <p className="font-medium">Adresă</p>
-                    <p className="text-gray-600">
+                    <p className="font-medium text-foreground">Adresă</p>
+                    <p className="text-muted-foreground">
                       Strada Transparenței nr. 1<br />
                       București, România
                     </p>
@@ -99,13 +105,11 @@ export default function Contact() {
                 </div>
               </CardContent>
             </Card>
-
-
           </div>
 
           {/* Contact Form */}
           <div className="lg:col-span-2">
-            <Card>
+            <Card className="bg-card rounded-2xl">
               <CardHeader>
                 <CardTitle>Trimite-ne un Mesaj</CardTitle>
               </CardHeader>
@@ -126,7 +130,7 @@ export default function Contact() {
                           </FormItem>
                         )}
                       />
-                      
+
                       <FormField
                         control={form.control}
                         name="email"

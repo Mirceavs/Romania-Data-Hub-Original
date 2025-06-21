@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link, useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
-import { BarChart3, ChevronDown, Menu, X } from "lucide-react";
+import { BarChart3, ChevronDown, Menu } from "lucide-react";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -33,35 +33,38 @@ export default function Navbar() {
               <BarChart3 className="w-6 h-6 text-primary-foreground" />
             </div>
             <div>
-              <h1 className="text-xl font-semibold text-gray-900">Romania Data Hub</h1>
-              <p className="text-xs text-gray-500">Transparența fondurilor publice</p>
+              <h1 className="text-xl font-semibold navbar-text-primary">Romania Data Hub</h1>
+              <p className="navbar-text-muted">Transparența fondurilor publice</p>
             </div>
           </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
             <Link href="/">
-              <span className={`font-medium transition-colors ${
-                location === "/" 
-                  ? "text-primary border-b-2 border-primary pb-1" 
-                  : "text-gray-700 hover:text-primary"
-              }`}>
+              <span
+                className={`navbar-text-default ${
+                  location === "/" ? "navbar-text-primary border-b-2 border-primary pb-1" : ""
+                }`}
+              >
                 Acasă
               </span>
             </Link>
-            
+
             {/* Sectors Dropdown */}
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <Button variant="ghost" className="flex items-center text-gray-700 hover:text-primary font-medium">
+                <Button variant="ghost" className="navbar-text-default flex items-center">
                   Sectoare
                   <ChevronDown className="ml-1 w-4 h-4" />
                 </Button>
               </DropdownMenuTrigger>
-              <DropdownMenuContent className="w-48">
+              <DropdownMenuContent className="w-48 bg-popover text-popover-foreground">
                 {sectors.map((sector) => (
                   <DropdownMenuItem key={sector.id} asChild>
-                    <Link href={`/sector/${sector.id}`} className="flex items-center cursor-pointer">
+                    <Link
+                      href={`/sector/${sector.id}`}
+                      className="flex items-center cursor-pointer navbar-text-default"
+                    >
                       <span className="mr-2">{sector.icon}</span>
                       {sector.name}
                     </Link>
@@ -71,21 +74,21 @@ export default function Navbar() {
             </DropdownMenu>
 
             <Link href="/about">
-              <span className={`font-medium transition-colors ${
-                location === "/about" 
-                  ? "text-primary" 
-                  : "text-gray-700 hover:text-primary"
-              }`}>
+              <span
+                className={`navbar-text-default ${
+                  location === "/about" ? "navbar-text-primary border-b-2 border-primary pb-1" : ""
+                }`}
+              >
                 Despre
               </span>
             </Link>
 
             <Link href="/contact">
-              <span className={`font-medium transition-colors ${
-                location === "/contact" 
-                  ? "text-primary" 
-                  : "text-gray-700 hover:text-primary"
-              }`}>
+              <span
+                className={`navbar-text-default ${
+                  location === "/contact" ? "navbar-text-primary border-b-2 border-primary pb-1" : ""
+                }`}
+              >
                 Contact
               </span>
             </Link>
@@ -94,11 +97,11 @@ export default function Navbar() {
           {/* Login Button & Mobile Menu */}
           <div className="flex items-center space-x-4">
             <Link href="/login">
-              <Button className="bg-primary hover:bg-primary/90">
+              <Button className="bg-primary hover:bg-primary/90 text-primary-foreground">
                 Autentificare
               </Button>
             </Link>
-            
+
             {/* Mobile Menu */}
             <Sheet open={mobileOpen} onOpenChange={setMobileOpen}>
               <SheetTrigger asChild>
@@ -109,34 +112,32 @@ export default function Navbar() {
               <SheetContent side="right" className="w-[300px]">
                 <div className="flex flex-col space-y-4 mt-8">
                   <Link href="/" onClick={() => setMobileOpen(false)}>
-                    <span className="block px-3 py-2 text-lg font-medium text-gray-900 hover:text-primary">
-                      Acasă
-                    </span>
+                    <span className="navbar-mobile-text">Acasă</span>
                   </Link>
-                  
+
                   <div className="px-3 py-2">
-                    <span className="text-lg font-medium text-gray-900">Sectoare</span>
+                    <span className="navbar-mobile-text">Sectoare</span>
                     <div className="mt-2 ml-4 space-y-2">
                       {sectors.map((sector) => (
-                        <Link key={sector.id} href={`/sector/${sector.id}`} onClick={() => setMobileOpen(false)}>
-                          <span className="block py-1 text-gray-700 hover:text-primary">
+                        <Link
+                          key={sector.id}
+                          href={`/sector/${sector.id}`}
+                          onClick={() => setMobileOpen(false)}
+                        >
+                          <span className="block py-1 navbar-text-default">
                             {sector.icon} {sector.name}
                           </span>
                         </Link>
                       ))}
                     </div>
                   </div>
-                  
+
                   <Link href="/about" onClick={() => setMobileOpen(false)}>
-                    <span className="block px-3 py-2 text-lg font-medium text-gray-900 hover:text-primary">
-                      Despre
-                    </span>
+                    <span className="navbar-mobile-text">Despre</span>
                   </Link>
-                  
+
                   <Link href="/contact" onClick={() => setMobileOpen(false)}>
-                    <span className="block px-3 py-2 text-lg font-medium text-gray-900 hover:text-primary">
-                      Contact
-                    </span>
+                    <span className="navbar-mobile-text">Contact</span>
                   </Link>
                 </div>
               </SheetContent>
