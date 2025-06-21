@@ -21,38 +21,50 @@ import {
 } from "@/components/ui/form";
 import { Separator } from "@/components/ui/separator";
 import { useToast } from "@/hooks/use-toast";
-import { BarChart3, Eye, EyeOff } from "lucide-react";
+import { User, Eye, EyeOff } from "lucide-react";
 
-const loginSchema = z.object({
-  email: z.string().email("Adresa de email nu este validă"),
-  password: z.string().min(6, "Parola trebuie să aibă cel puțin 6 caractere"),
-});
+const registerSchema = z
+  .object({
+    name: z.string().min(2, "Numele trebuie să aibă cel puțin 2 caractere"),
+    email: z.string().email("Adresa de email nu este validă"),
+    password: z.string().min(6, "Parola trebuie să aibă cel puțin 6 caractere"),
+    confirmPassword: z.string().min(6, "Confirmarea parolei trebuie să aibă cel puțin 6 caractere"),
+  })
+  .refine((data) => data.password === data.confirmPassword, {
+    message: "Parolele nu corespund",
+    path: ["confirmPassword"],
+  });
 
-type LoginFormData = z.infer<typeof loginSchema>;
+type RegisterFormData = z.infer<typeof registerSchema>;
 
-export default function Login() {
+export default function Register() {
   const [isLoading, setIsLoading] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const { toast } = useToast();
 
-  const form = useForm<LoginFormData>({
-    resolver: zodResolver(loginSchema),
+  const form = useForm<RegisterFormData>({
+    resolver: zodResolver(registerSchema),
     defaultValues: {
+      name: "",
       email: "",
       password: "",
+      confirmPassword: "",
     },
   });
 
-  const onSubmit = async (data: LoginFormData) => {
+  const onSubmit = async (data: RegisterFormData) => {
     setIsLoading(true);
 
-    await new Promise((resolve) => setTimeout(resolve, 1000));
+    // Simulează apelul API
+    await new Promise((resolve) => setTimeout(resolve, 1500));
 
     toast({
-      title: "Autentificare reușită!",
-      description: "Bun venit pe Romania Data Hub.",
+      title: "Înregistrare reușită!",
+      description: `Bine ai venit, ${data.name}!`,
     });
 
+    form.reset();
     setIsLoading(false);
   };
 
@@ -62,21 +74,30 @@ export default function Login() {
         <CardHeader className="text-center space-y-2">
           <div className="flex justify-center mb-2">
             <div className="w-12 h-12 bg-primary rounded-xl flex items-center justify-center">
-              <BarChart3 className="w-7 h-7 text-primary-foreground" />
+              <User className="w-7 h-7 text-primary-foreground" />
             </div>
           </div>
-          <CardTitle className="text-2xl text-foreground">
-            Autentificare
-          </CardTitle>
-          <p className="text-sm text-muted-foreground">
-            Accesează platforma Romania Data Hub
-          </p>
+          <CardTitle className="text-2xl text-foreground">Înregistrare</CardTitle>
+          <p className="text-sm text-muted-foreground">Creează-ți un cont nou pe Romania Data Hub</p>
         </CardHeader>
 
         <CardContent>
           <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-5">
-              {/* Email */}
+              <FormField
+                control={form.control}
+                name="name"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Nume complet</FormLabel>
+                    <FormControl>
+                      <Input placeholder="Numele tău complet" {...field} />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+
               <FormField
                 control={form.control}
                 name="email"
@@ -84,18 +105,13 @@ export default function Login() {
                   <FormItem>
                     <FormLabel>Email</FormLabel>
                     <FormControl>
-                      <Input
-                        type="email"
-                        placeholder="email@exemplu.com"
-                        {...field}
-                      />
+                      <Input type="email" placeholder="email@exemplu.com" {...field} />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
                 )}
               />
 
-              {/* Password */}
               <FormField
                 control={form.control}
                 name="password"
@@ -116,11 +132,7 @@ export default function Login() {
                           className="absolute right-1 top-1/2 -translate-y-1/2 text-muted-foreground"
                           onClick={() => setShowPassword(!showPassword)}
                         >
-                          {showPassword ? (
-                            <EyeOff className="h-4 w-4" />
-                          ) : (
-                            <Eye className="h-4 w-4" />
-                          )}
+                          {showPassword ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
                         </Button>
                       </div>
                     </FormControl>
@@ -129,39 +141,50 @@ export default function Login() {
                 )}
               />
 
-              {/* Remember me & Forgot password */}
-              <div className="flex items-center justify-between">
-                <label className="flex items-center space-x-2 text-sm text-muted-foreground">
-                  <input
-                    type="checkbox"
-                    className="accent-primary border-border rounded-sm"
-                  />
-                  <span>Ține-mă conectat</span>
-                </label>
-                <a href="#" className="text-sm text-primary hover:underline">
-                  Am uitat parola
-                </a>
-              </div>
+              <FormField
+                control={form.control}
+                name="confirmPassword"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Confirmă parola</FormLabel>
+                    <FormControl>
+                      <div className="relative">
+                        <Input
+                          type={showConfirmPassword ? "text" : "password"}
+                          placeholder="Confirmă parola"
+                          {...field}
+                        />
+                        <Button
+                          type="button"
+                          variant="ghost"
+                          size="icon"
+                          className="absolute right-1 top-1/2 -translate-y-1/2 text-muted-foreground"
+                          onClick={() => setShowConfirmPassword(!showConfirmPassword)}
+                        >
+                          {showConfirmPassword ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
+                        </Button>
+                      </div>
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
 
-              {/* Submit */}
               <Button type="submit" className="w-full" disabled={isLoading}>
-                {isLoading ? "Se autentifică..." : "Autentificare"}
+                {isLoading ? "Se înregistrează..." : "Înregistrează-te"}
               </Button>
             </form>
           </Form>
 
-          {/* Separator */}
           <Separator className="my-6" />
 
-          {/* Extra options */}
           <div className="text-center space-y-4">
             <p className="text-sm text-muted-foreground">
-              Nu ai un cont?{" "}
-              <Link href="/register" className="text-primary hover:underline">
-                Înregistrează-te aici
+              Ai deja cont?{" "}
+              <Link href="/login" className="text-primary hover:underline">
+                Autentifică-te aici
               </Link>
             </p>
-
             <Link href="/">
               <Button variant="outline" className="w-full">
                 Înapoi la pagina principală
