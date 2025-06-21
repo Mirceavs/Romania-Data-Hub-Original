@@ -1,4 +1,10 @@
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue
+} from "@/components/ui/select";
 
 interface MinistryFilterProps {
   ministries: string[];
@@ -6,18 +12,24 @@ interface MinistryFilterProps {
   onMinistryChange: (ministry: string) => void;
 }
 
-export default function MinistryFilter({ 
-  ministries, 
-  selectedMinistry, 
-  onMinistryChange 
+export default function MinistryFilter({
+  ministries,
+  selectedMinistry,
+  onMinistryChange
 }: MinistryFilterProps) {
   return (
-    <div className="flex items-center space-x-2">
-      <label htmlFor="ministry-filter" className="text-sm font-medium text-gray-700">
+    <div className="flex items-center gap-3">
+      <label
+        htmlFor="ministry-filter"
+        className="text-sm font-medium text-muted-foreground"
+      >
         Filtrează după minister:
       </label>
       <Select value={selectedMinistry} onValueChange={onMinistryChange}>
-        <SelectTrigger className="w-[280px]">
+        <SelectTrigger
+          id="ministry-filter"
+          className="w-[280px] bg-muted/40 border-border rounded-md shadow-sm"
+        >
           <SelectValue placeholder="Selectează ministerul" />
         </SelectTrigger>
         <SelectContent>
