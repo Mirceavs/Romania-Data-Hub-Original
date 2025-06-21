@@ -1,30 +1,112 @@
 {
   "id": "educatie",
   "name": "Ministerul Educației",
-  "description": "Coordonează politicile educaționale și gestionează bugetul alocat instituțiilor de învățământ.",
-  "ministries": ["Ministerul Educației"],
+  "description": "Coordonează sistemul național de învățământ preuniversitar și universitar din România.",
   "stats": [
     {
-      "id": "students",
+      "id": "elevi_total",
       "label": "Elevi în sistem",
-      "value": "2.950.000",
-      "change": "+1.2%",
+      "value": "2.870.000",
+      "change": "+1,2%",
       "changeType": "positive",
       "icon": "GraduationCap"
     },
     {
-      "id": "budget",
+      "id": "buget_alocat",
       "label": "Buget Alocat",
-      "value": "45 MLD RON",
-      "change": "+4.5%",
+      "value": "58,3 MLD RON",
+      "change": "+0,5%",
       "changeType": "positive",
       "icon": "DollarSign"
+    },
+    {
+      "id": "personal_didactic",
+      "label": "Personal Didactic",
+      "value": "230.000",
+      "change": "-0,8%",
+      "changeType": "negative",
+      "icon": "UserCheck"
+    },
+    {
+      "id": "unitati_invatamant",
+      "label": "Unități de Învățământ",
+      "value": "7.100",
+      "change": "≈0%",
+      "changeType": "neutral",
+      "icon": "Building"
     }
   ],
-  "chartData": [
-    { "year": "2020", "value": 41000000, "budget": 37000000 },
-    { "year": "2021", "value": 43000000, "budget": 39000000 },
-    { "year": "2022", "value": 45000000, "budget": 42000000 },
-    { "year": "2023", "value": 47000000, "budget": 45000000 }
+  "overviewData": [
+    { "year": "2018", "students": 2900000, "teachers": 235000, "budget": 37000000000, "schools": 7050 },
+    { "year": "2019", "students": 2880000, "teachers": 234000, "budget": 40000000000, "schools": 7070 },
+    { "year": "2020", "students": 2850000, "teachers": 232000, "budget": 42000000000, "schools": 7085 },
+    { "year": "2021", "students": 2820000, "teachers": 231000, "budget": 45000000000, "schools": 7090 },
+    { "year": "2022", "students": 2830000, "teachers": 230000, "budget": 53000000000, "schools": 7100 },
+    { "year": "2023", "students": 2870000, "teachers": 230000, "budget": 58300000000, "schools": 7100 }
+  ],
+  "evolutionData": [
+    {
+      "category": "performanta",
+      "label": "Promovabilitate BAC",
+      "values": [
+        { "year": "2019", "value": 67.8 },
+        { "year": "2020", "value": 64.5 },
+        { "year": "2021", "value": 69.2 },
+        { "year": "2022", "value": 73.3 },
+        { "year": "2023", "value": 75.0 }
+      ]
+    },
+    {
+      "category": "acces",
+      "label": "Rata cuprinderii în învățământ primar",
+      "values": [
+        { "year": "2019", "value": 98.2 },
+        { "year": "2020", "value": 98.0 },
+        { "year": "2021", "value": 98.1 },
+        { "year": "2022", "value": 98.4 },
+        { "year": "2023", "value": 98.5 }
+      ]
+    },
+    {
+      "category": "resurse",
+      "label": "Elevi per cadru didactic",
+      "values": [
+        { "year": "2019", "value": 12.0 },
+        { "year": "2020", "value": 12.3 },
+        { "year": "2021", "value": 12.1 },
+        { "year": "2022", "value": 12.3 },
+        { "year": "2023", "value": 12.5 }
+      ]
+    },
+    {
+      "category": "calitate",
+      "label": "Școli reabilitate",
+      "values": [
+        { "year": "2019", "value": 140 },
+        { "year": "2020", "value": 160 },
+        { "year": "2021", "value": 180 },
+        { "year": "2022", "value": 210 },
+        { "year": "2023", "value": 240 }
+      ]
+    }
+  ],
+  "budgetExecution": [
+    { "year": "2019", "value": 40000000000 },
+    { "year": "2020", "value": 42000000000 },
+    { "year": "2021", "value": 45000000000 },
+    { "year": "2022", "value": 53000000000 },
+    { "year": "2023", "value": 58300000000 }
+  ],
+  "budgetDistribution": [
+    { "category": "salarii", "label": "Salarii și indemnizații", "value": 34000000000 },
+    { "category": "bunuri", "label": "Bunuri și servicii", "value": 9000000000 },
+    { "category": "investitii", "label": "Investiții capitale", "value": 4000000000 },
+    { "category": "transferuri", "label": "Transferuri", "value": 11300000000 }
+  ],
+  "budgetPlannedVsExecuted": [
+    { "trimester": "T1", "planned": 12000000000, "executed": 11500000000 },
+    { "trimester": "T2", "planned": 14000000000, "executed": 13700000000 },
+    { "trimester": "T3", "planned": 16000000000, "executed": 15800000000 },
+    { "trimester": "T4", "planned": 16300000000, "executed": 17300000000 }
   ]
 }
