@@ -1,30 +1,68 @@
 {
   "id": "sanatate",
   "name": "Ministerul Sănătății",
-  "description": "Administrează sistemul public de sănătate și alocările pentru spitale, medicamente și personal medical.",
+  "description": "Coordonează politica națională de sănătate, rețeaua de spitale publice și inițiativele de prevenție.",
   "ministries": ["Ministerul Sănătății"],
   "stats": [
     {
-      "id": "hospitals",
-      "label": "Spitale finanțate",
-      "value": "325",
-      "change": "-2%",
-      "changeType": "negative",
-      "icon": "Home"
+      "id": "patients",
+      "label": "Pacienți tratați",
+      "value": "7.400.000",
+      "change": "+2.5%",
+      "changeType": "positive",
+      "icon": "UserCheck"
     },
     {
-      "id": "healthBudget",
-      "label": "Buget Sănătate",
-      "value": "68 MLD RON",
-      "change": "+3.1%",
+      "id": "budget",
+      "label": "Buget alocat",
+      "value": "34 mld RON",
+      "change": "+6.1%",
       "changeType": "positive",
       "icon": "DollarSign"
+    },
+    {
+      "id": "personnel",
+      "label": "Personal medical",
+      "value": "105.000",
+      "change": "+1.2%",
+      "changeType": "neutral",
+      "icon": "Users"
+    },
+    {
+      "id": "facilities",
+      "label": "Unități medicale",
+      "value": "1.320",
+      "change": "+0.8%",
+      "changeType": "neutral",
+      "icon": "Building2"
     }
   ],
-  "chartData": [
-    { "year": "2020", "value": 62000000, "budget": 60000000 },
-    { "year": "2021", "value": 65000000, "budget": 63000000 },
-    { "year": "2022", "value": 67000000, "budget": 64000000 },
-    { "year": "2023", "value": 68000000, "budget": 67000000 }
+  "overviewData": [
+    { "year": "2018", "patients": 7200000, "doctors": 58000, "budget": 29500000000, "facilities": 1250 },
+    { "year": "2019", "patients": 7350000, "doctors": 59000, "budget": 30500000000, "facilities": 1270 },
+    { "year": "2020", "patients": 7100000, "doctors": 60000, "budget": 31000000000, "facilities": 1280 },
+    { "year": "2021", "patients": 7250000, "doctors": 61000, "budget": 32000000000, "facilities": 1290 },
+    { "year": "2022", "patients": 7380000, "doctors": 62000, "budget": 33000000000, "facilities": 1300 },
+    { "year": "2023", "patients": 7450000, "doctors": 63000, "budget": 34000000000, "facilities": 1320 }
+  ],
+  "evolutionData": [
+    { "year": "2018", "performance": 78, "access": 560, "resources": 2.8, "quality": 0.7 },
+    { "year": "2019", "performance": 80, "access": 580, "resources": 2.9, "quality": 0.75 },
+    { "year": "2020", "performance": 77, "access": 550, "resources": 3.0, "quality": 0.8 },
+    { "year": "2021", "performance": 81, "access": 590, "resources": 3.1, "quality": 0.85 },
+    { "year": "2022", "performance": 82, "access": 600, "resources": 3.2, "quality": 0.9 },
+    { "year": "2023", "performance": 84, "access": 620, "resources": 3.3, "quality": 0.95 }
+  ],
+  "budgetDistribution": [
+    { "name": "Salarii", "value": 20000000000, "color": "#10b981" },
+    { "name": "Medicamente", "value": 6500000000, "color": "#3b82f6" },
+    { "name": "Investiții", "value": 4000000000, "color": "#f59e0b" },
+    { "name": "Servicii externe", "value": 3500000000, "color": "#ef4444" }
+  ],
+  "budgetComparison": [
+    { "quarter": "T1", "planned": 8000000000, "executed": 7800000000 },
+    { "quarter": "T2", "planned": 8500000000, "executed": 8300000000 },
+    { "quarter": "T3", "planned": 8700000000, "executed": 8650000000 },
+    { "quarter": "T4", "planned": 8800000000, "executed": 8700000000 }
   ]
 }

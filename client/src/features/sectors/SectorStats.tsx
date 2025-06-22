@@ -3,7 +3,6 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import StatCard from "@/components/StatCard";
 import DownloadButton from "@/components/DownloadButton";
-import MinistryFilter from "@/components/MinistryFilter";
 import {
   LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip,
   ResponsiveContainer, BarChart, Bar
@@ -15,24 +14,28 @@ import {
   Zap, Leaf, Gauge, Battery, FlaskConical, Lightbulb, Smartphone
 } from "lucide-react";
 
+interface Stat {
+  id: string;
+  label: string;
+  value: string;
+  change: string;
+  changeType: "positive" | "negative" | "neutral";
+  icon: string;
+}
+
+interface OverviewItem {
+  year: string;
+  gdp?: number;
+  inflation?: number;
+  budget?: number;
+}
+
 interface SectorData {
   id: string;
   name: string;
   description: string;
-  ministries: string[];
-  stats: Array<{
-    id: string;
-    label: string;
-    value: string;
-    change: string;
-    changeType: "positive" | "negative" | "neutral";
-    icon: string;
-  }>;
-  chartData: Array<{
-    year: string;
-    value: number;
-    budget: number;
-  }>;
+  stats: Stat[];
+  overview: OverviewItem[];
 }
 
 interface SectorStatsProps {
@@ -40,7 +43,6 @@ interface SectorStatsProps {
 }
 
 export default function SectorStats({ sectorData }: SectorStatsProps) {
-  const [selectedMinistry, setSelectedMinistry] = useState("toate");
   const [activeTab, setActiveTab] = useState("overview");
 
   const getIconComponent = (iconName: string) => {
@@ -52,28 +54,38 @@ export default function SectorStats({ sectorData }: SectorStatsProps) {
     return iconMap[iconName] || Building;
   };
 
+  if (!sectorData || !Array.isArray(sectorData.overview)) {
+    return <div className="text-red-500">Nu există date valide pentru acest sector.</div>;
+  }
+
   return (
     <div className="space-y-6 text-foreground">
-      {/* Header */}
       <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
         <div>
           <h1 className="text-3xl font-bold">{sectorData.name}</h1>
           <p className="text-lg text-muted-foreground mt-2">{sectorData.description}</p>
         </div>
         <div className="flex items-center gap-4">
-          <MinistryFilter
-            ministries={sectorData.ministries}
-            selectedMinistry={selectedMinistry}
-            onMinistryChange={setSelectedMinistry}
-          />
           <DownloadButton
-            data={sectorData.chartData}
-            filename={`sector-${sectorData.id}-data`}
+            data={sectorData.overview}
+            filename={`sector-${sectorData.id}-overview-data`}
           />
         </div>
       </div>
 
-      {/* Tabs */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {sectorData.stats.map((stat) => (
+          <StatCard
+            key={stat.id}
+            title={stat.label}
+            value={stat.value}
+            change={stat.change}
+            changeType={stat.changeType}
+            icon={getIconComponent(stat.icon)}
+          />
+        ))}
+      </div>
+
       <Tabs value={activeTab} onValueChange={setActiveTab} className="space-y-6">
         <TabsList className="grid w-full grid-cols-3 bg-muted">
           <TabsTrigger value="overview">Prezentare Generală</TabsTrigger>
@@ -82,33 +94,26 @@ export default function SectorStats({ sectorData }: SectorStatsProps) {
         </TabsList>
 
         <TabsContent value="overview" className="space-y-6">
-          {/* Stats Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {sectorData.stats.map((stat) => (
-              <StatCard
-                key={stat.id}
-                title={stat.label}
-                value={stat.value}
-                change={stat.change}
-                changeType={stat.changeType}
-                icon={getIconComponent(stat.icon)}
-              />
-            ))}
-          </div>
-
-          {/* Main Chart */}
           <Card className="bg-muted/30 rounded-xl border border-border">
             <CardHeader>
               <CardTitle className="text-lg">Evoluția indicatorilor principali</CardTitle>
             </CardHeader>
             <CardContent>
               <ResponsiveContainer width="100%" height={400}>
-                <LineChart data={sectorData.chartData}>
+                <LineChart data={sectorData.overview}>
                   <CartesianGrid strokeDasharray="3 3" />
                   <XAxis dataKey="year" />
                   <YAxis />
                   <Tooltip formatter={(value: number) => formatNumber(value)} />
-                  <Line type="monotone" dataKey="value" stroke="#3b82f6" strokeWidth={2} />
+                  {Array.isArray(sectorData.overview) && sectorData.overview.some((item) => item.gdp) && (
+                    <Line type="monotone" dataKey="gdp" stroke="#3b82f6" name="PIB" />
+                  )}
+                  {Array.isArray(sectorData.overview) && sectorData.overview.some((item) => item.inflation) && (
+                    <Line type="monotone" dataKey="inflation" stroke="#f97316" name="Inflație (%)" />
+                  )}
+                  {Array.isArray(sectorData.overview) && sectorData.overview.some((item) => item.budget) && (
+                    <Line type="monotone" dataKey="budget" stroke="#10b981" name="Buget" />
+                  )}
                 </LineChart>
               </ResponsiveContainer>
             </CardContent>
@@ -118,16 +123,16 @@ export default function SectorStats({ sectorData }: SectorStatsProps) {
         <TabsContent value="evolution" className="space-y-6">
           <Card className="bg-muted/30 rounded-xl border border-border">
             <CardHeader>
-              <CardTitle className="text-lg">Evoluție pe ani</CardTitle>
+              <CardTitle className="text-lg">Evoluție PIB</CardTitle>
             </CardHeader>
             <CardContent>
-              <ResponsiveContainer width="100%" height={500}>
-                <BarChart data={sectorData.chartData}>
+              <ResponsiveContainer width="100%" height={400}>
+                <BarChart data={sectorData.overview}>
                   <CartesianGrid strokeDasharray="3 3" />
                   <XAxis dataKey="year" />
                   <YAxis />
                   <Tooltip formatter={(value: number) => formatNumber(value)} />
-                  <Bar dataKey="value" fill="#3b82f6" />
+                  <Bar dataKey="gdp" fill="#3b82f6" name="PIB" />
                 </BarChart>
               </ResponsiveContainer>
             </CardContent>
@@ -141,12 +146,12 @@ export default function SectorStats({ sectorData }: SectorStatsProps) {
             </CardHeader>
             <CardContent>
               <ResponsiveContainer width="100%" height={400}>
-                <LineChart data={sectorData.chartData}>
+                <LineChart data={sectorData.overview}>
                   <CartesianGrid strokeDasharray="3 3" />
                   <XAxis dataKey="year" />
                   <YAxis />
                   <Tooltip formatter={(value: number) => `${formatNumber(value)} RON`} />
-                  <Line type="monotone" dataKey="budget" stroke="#10b981" strokeWidth={2} />
+                  <Line type="monotone" dataKey="budget" stroke="#10b981" name="Buget executat" strokeWidth={2} />
                 </LineChart>
               </ResponsiveContainer>
             </CardContent>

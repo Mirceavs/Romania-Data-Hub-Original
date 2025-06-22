@@ -1,76 +1,48 @@
 {
   "id": "educatie",
   "name": "Educație",
-  "description": "Monitorizarea fondurilor publice alocate sistemului educațional din România",
-  "ministries": [
-    "Ministerul Educației",
-    "Ministerul Cercetării, Inovării și Digitalizării",
-    "Ministerul Tineretului și Sportului"
-  ],
+  "description": "Analiza sistemului educațional românesc: resurse, acces, calitate și rezultate în învățământul preuniversitar și universitar.",
+  "ministries": ["educatie"],
   "stats": [
     {
-      "id": "scoli",
-      "label": "Numărul total de școli",
-      "value": "8,234",
-      "change": "+47 față de anul trecut",
-      "changeType": "positive",
-      "icon": "Building"
-    },
-    {
-      "id": "profesori",
-      "label": "Numărul de profesori",
-      "value": "234,567",
-      "change": "+1,234 față de anul trecut",
-      "changeType": "positive",
-      "icon": "Users"
-    },
-    {
-      "id": "elevi",
-      "label": "Numărul de elevi",
-      "value": "2.8M",
-      "change": "-12,000 față de anul trecut",
+      "id": "students-total",
+      "label": "Elevi și Studenți",
+      "value": "3.150.000",
+      "change": "-1.8%",
       "changeType": "negative",
       "icon": "GraduationCap"
     },
     {
-      "id": "buget",
-      "label": "Buget educație",
-      "value": "18.5 Mrd RON",
-      "change": "+8.2% față de anul trecut",
+      "id": "teachers-total",
+      "label": "Cadre Didactice",
+      "value": "240.000",
+      "change": "+0.4%",
       "changeType": "positive",
-      "icon": "DollarSign"
+      "icon": "Users"
+    },
+    {
+      "id": "institutions",
+      "label": "Instituții de Învățământ",
+      "value": "8.500",
+      "change": "+0.7%",
+      "changeType": "positive",
+      "icon": "Building2"
+    },
+    {
+      "id": "bac-pass-rate",
+      "label": "Promovare BAC",
+      "value": "74.3%",
+      "change": "+2.1%",
+      "changeType": "positive",
+      "icon": "TrendingUp"
     }
   ],
-  "chartData": [
-    {
-      "year": "2019",
-      "value": 2850000,
-      "budget": 15200000000
-    },
-    {
-      "year": "2020",
-      "value": 2820000,
-      "budget": 16100000000
-    },
-    {
-      "year": "2021",
-      "value": 2810000,
-      "budget": 16800000000
-    },
-    {
-      "year": "2022",
-      "value": 2805000,
-      "budget": 17200000000
-    },
-    {
-      "year": "2023",
-      "value": 2812000,
-      "budget": 17100000000
-    },
-    {
-      "year": "2024",
-      "value": 2800000,
-      "budget": 18500000000
-    }
+  "overview": [
+    { "year": "2018", "gdp": 3200000, "budget": 29000000000 },
+    { "year": "2019", "gdp": 3150000, "budget": 32000000000 },
+    { "year": "2020", "gdp": 3100000, "budget": 34000000000 },
+    { "year": "2021", "gdp": 3080000, "budget": 37000000000 },
+    { "year": "2022", "gdp": 3070000, "budget": 43000000000 },
+    { "year": "2023", "gdp": 3150000, "budget": 50000000000 }
   ]
 }

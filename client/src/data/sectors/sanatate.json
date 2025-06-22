@@ -1,76 +1,48 @@
 {
   "id": "sanatate",
   "name": "Sănătate",
-  "description": "Monitorizarea fondurilor publice alocate sistemului de sănătate din România",
-  "ministries": [
-    "Ministerul Sănătății",
-    "Casa Națională de Asigurări de Sănătate",
-    "Agenția Națională a Medicamentului"
-  ],
+  "description": "Date privind infrastructura sanitară, personalul medical, accesul la servicii și finanțarea sistemului de sănătate.",
+  "ministries": ["sanatate"],
   "stats": [
     {
-      "id": "spitale",
-      "label": "Spitale publice",
-      "value": "542",
-      "change": "+12 față de anul trecut",
+      "id": "total-hospitals",
+      "label": "Număr Total Spitale",
+      "value": "450",
+      "change": "+1.2%",
       "changeType": "positive",
       "icon": "Building2"
     },
     {
-      "id": "medici",
-      "label": "Medici activi",
-      "value": "65,234",
-      "change": "+2,156 față de anul trecut",
-      "changeType": "positive",
+      "id": "doctors",
+      "label": "Număr Medici",
+      "value": "50,000",
+      "change": "-0.5%",
+      "changeType": "negative",
       "icon": "UserCheck"
     },
     {
-      "id": "ambulante",
-      "label": "Ambulanțe",
-      "value": "1,245",
-      "change": "+89 față de anul trecut",
+      "id": "nurses",
+      "label": "Număr Asistenți Medicali",
+      "value": "70,000",
+      "change": "+2.0%",
       "changeType": "positive",
-      "icon": "Truck"
+      "icon": "Users"
     },
     {
-      "id": "buget",
-      "label": "Buget sănătate",
-      "value": "22.1 Mrd RON",
-      "change": "+12.3% față de anul trecut",
+      "id": "health-budget",
+      "label": "Buget Alocat Sănătății",
+      "value": "20 mld. RON",
+      "change": "+5%",
       "changeType": "positive",
       "icon": "DollarSign"
     }
   ],
-  "chartData": [
-    {
-      "year": "2019",
-      "value": 62000,
-      "budget": 18500000000
-    },
-    {
-      "year": "2020",
-      "value": 63100,
-      "budget": 19200000000
-    },
-    {
-      "year": "2021",
-      "value": 63800,
-      "budget": 19800000000
-    },
-    {
-      "year": "2022",
-      "value": 64200,
-      "budget": 20100000000
-    },
-    {
-      "year": "2023",
-      "value": 65078,
-      "budget": 21300000000
-    },
-    {
-      "year": "2024",
-      "value": 65234,
-      "budget": 22100000000
-    }
+  "overview": [
+    { "year": "2018", "hospitals": 440, "doctors": 49000, "nurses": 68000, "budget": 15000000000 },
+    { "year": "2019", "hospitals": 442, "doctors": 48500, "nurses": 69000, "budget": 16000000000 },
+    { "year": "2020", "hospitals": 445, "doctors": 48000, "nurses": 70000, "budget": 18000000000 },
+    { "year": "2021", "hospitals": 447, "doctors": 48000, "nurses": 71000, "budget": 19000000000 },
+    { "year": "2022", "hospitals": 449, "doctors": 48500, "nurses": 72000, "budget": 19500000000 },
+    { "year": "2023", "hospitals": 450, "doctors": 50000, "nurses": 70000, "budget": 20000000000 }
   ]
 }

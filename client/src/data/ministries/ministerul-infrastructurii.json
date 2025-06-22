@@ -1,30 +1,68 @@
 {
   "id": "infrastructura",
   "name": "Ministerul Infrastructurii",
-  "description": "Gestionează proiectele de infrastructură rutieră, feroviară și energetică.",
+  "description": "Coordonează dezvoltarea infrastructurii naționale de transport, utilități și lucrări publice.",
   "ministries": ["Ministerul Infrastructurii"],
   "stats": [
     {
-      "id": "kmBuilt",
-      "label": "Km noi construiți",
-      "value": "110",
-      "change": "+12%",
+      "id": "road_length",
+      "label": "Drumuri reabilitate",
+      "value": "1.200 km",
+      "change": "+15%",
       "changeType": "positive",
       "icon": "Truck"
     },
     {
-      "id": "infraBudget",
-      "label": "Buget Infrastructură",
-      "value": "38 MLD RON",
-      "change": "+6.4%",
+      "id": "autostrazi",
+      "label": "Autostrăzi noi",
+      "value": "180 km",
+      "change": "+20%",
       "changeType": "positive",
-      "icon": "DollarSign"
+      "icon": "Car"
+    },
+    {
+      "id": "investitii",
+      "label": "Investiții publice",
+      "value": "24 mld RON",
+      "change": "+8%",
+      "changeType": "positive",
+      "icon": "Building2"
+    },
+    {
+      "id": "transport_feroviar",
+      "label": "Modernizare cale ferată",
+      "value": "280 km",
+      "change": "+5%",
+      "changeType": "positive",
+      "icon": "RotateCcw"
     }
   ],
-  "chartData": [
-    { "year": "2020", "value": 34000000, "budget": 32000000 },
-    { "year": "2021", "value": 36000000, "budget": 34000000 },
-    { "year": "2022", "value": 37000000, "budget": 36000000 },
-    { "year": "2023", "value": 38000000, "budget": 38000000 }
+  "overviewData": [
+    { "year": "2018", "students": 0, "teachers": 0, "budget": 18000000000, "schools": 0 },
+    { "year": "2019", "students": 0, "teachers": 0, "budget": 20000000000, "schools": 0 },
+    { "year": "2020", "students": 0, "teachers": 0, "budget": 22000000000, "schools": 0 },
+    { "year": "2021", "students": 0, "teachers": 0, "budget": 23000000000, "schools": 0 },
+    { "year": "2022", "students": 0, "teachers": 0, "budget": 25000000000, "schools": 0 },
+    { "year": "2023", "students": 0, "teachers": 0, "budget": 27000000000, "schools": 0 }
+  ],
+  "evolutionData": [
+    { "year": "2018", "performance": 0, "access": 0, "resources": 16000000000, "quality": 2000000000 },
+    { "year": "2019", "performance": 0, "access": 0, "resources": 18000000000, "quality": 2200000000 },
+    { "year": "2020", "performance": 0, "access": 0, "resources": 19000000000, "quality": 2400000000 },
+    { "year": "2021", "performance": 0, "access": 0, "resources": 20000000000, "quality": 2600000000 },
+    { "year": "2022", "performance": 0, "access": 0, "resources": 23000000000, "quality": 2800000000 },
+    { "year": "2023", "performance": 0, "access": 0, "resources": 25000000000, "quality": 3000000000 }
+  ],
+  "budgetDistribution": [
+    { "name": "Investiții rutiere", "value": 12000000000, "color": "#10b981" },
+    { "name": "Infrastructură feroviară", "value": 6000000000, "color": "#3b82f6" },
+    { "name": "Lucrări publice", "value": 5000000000, "color": "#f59e0b" },
+    { "name": "Întreținere", "value": 4000000000, "color": "#ef4444" }
+  ],
+  "budgetComparison": [
+    { "quarter": "T1", "planned": 5000000000, "executed": 4600000000 },
+    { "quarter": "T2", "planned": 6000000000, "executed": 5500000000 },
+    { "quarter": "T3", "planned": 7000000000, "executed": 6800000000 },
+    { "quarter": "T4", "planned": 9000000000, "executed": 8700000000 }
   ]
 }

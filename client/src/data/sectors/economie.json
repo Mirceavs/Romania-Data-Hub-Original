@@ -1,76 +1,46 @@
 {
   "id": "economie",
   "name": "Economie",
-  "description": "Monitorizarea indicatorilor economici și a execuției bugetare la nivel național",
-  "ministries": [
-    "Ministerul Finanțelor Publice",
-    "Ministerul Economiei",
-    "Banca Națională a României"
-  ],
+  "description": "Monitorizarea performanței economice naționale și a principalilor indicatori macroeconomici.",
   "stats": [
     {
-      "id": "pib",
-      "label": "PIB",
-      "value": "284.1 Mrd EUR",
-      "change": "+3.1% față de anul trecut",
+      "id": "gdp",
+      "label": "PIB Național",
+      "value": "1.388 mld RON",
+      "change": "+3.2%",
       "changeType": "positive",
       "icon": "TrendingUp"
     },
     {
+      "id": "inflation",
+      "label": "Rata inflației",
+      "value": "7.1%",
+      "change": "-1.4%",
+      "changeType": "positive",
+      "icon": "Gauge"
+    },
+    {
+      "id": "exports",
+      "label": "Exporturi",
+      "value": "420 mld RON",
+      "change": "+2.7%",
+      "changeType": "positive",
+      "icon": "Truck"
+    },
+    {
       "id": "deficit",
       "label": "Deficit bugetar",
-      "value": "-5.7% din PIB",
-      "change": "+0.2pp față de anul trecut",
-      "changeType": "negative",
-      "icon": "TrendingDown"
-    },
-    {
-      "id": "executie",
-      "label": "Execuție bugetară",
-      "value": "92.3%",
-      "change": "+1.8% față de anul trecut",
-      "changeType": "positive",
-      "icon": "Target"
-    },
-    {
-      "id": "datorie",
-      "label": "Datorie publică",
-      "value": "48.9% din PIB",
-      "change": "+1.2pp față de anul trecut",
+      "value": "-85 mld RON",
+      "change": "+6.8%",
       "changeType": "negative",
       "icon": "AlertTriangle"
     }
   ],
-  "chartData": [
-    {
-      "year": "2019",
-      "value": 223800000000,
-      "budget": 223800000000
-    },
-    {
-      "year": "2020",
-      "value": 200100000000,
-      "budget": 200100000000
-    },
-    {
-      "year": "2021",
-      "value": 220500000000,
-      "budget": 220500000000
-    },
-    {
-      "year": "2022",
-      "value": 263400000000,
-      "budget": 263400000000
-    },
-    {
-      "year": "2023",
-      "value": 275600000000,
-      "budget": 275600000000
-    },
-    {
-      "year": "2024",
-      "value": 284100000000,
-      "budget": 284100000000
-    }
+  "overview": [
+    { "year": "2019", "gdp": 1045000000000, "budget": 350000000000, "inflation": 3.8 },
+    { "year": "2020", "gdp": 1060000000000, "budget": 370000000000, "inflation": 2.9 },
+    { "year": "2021", "gdp": 1150000000000, "budget": 400000000000, "inflation": 5.1 },
+    { "year": "2022", "gdp": 1250000000000, "budget": 430000000000, "inflation": 8.2 },
+    { "year": "2023", "gdp": 1388000000000, "budget": 470000000000, "inflation": 7.1 }
   ]
 }

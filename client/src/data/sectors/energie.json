@@ -1,77 +1,48 @@
 {
   "id": "energie",
   "name": "Energie",
-  "description": "Monitorizarea sectorului energetic și a investițiilor în energie regenerabilă",
-  "ministries": [
-    "Ministerul Energiei",
-    "Autoritatea Națională de Reglementare în Energie",
-    "Transgaz",
-    "Transelectrica"
-  ],
+  "description": "Monitorizarea sistemului energetic național: producție, consum, surse regenerabile, investiții și eficiență energetică.",
+  "ministries": ["energie"],
   "stats": [
     {
-      "id": "consum",
-      "label": "Consum energie",
-      "value": "52.3 TWh",
-      "change": "+1.8% față de anul trecut",
+      "id": "total-production",
+      "label": "Producție Totală Energie",
+      "value": "58.2 TWh",
+      "change": "+2.5%",
       "changeType": "positive",
       "icon": "Zap"
     },
     {
-      "id": "regenerabila",
-      "label": "Energie regenerabilă",
-      "value": "24.7%",
-      "change": "+2.3% față de anul trecut",
-      "changeType": "positive",
-      "icon": "Leaf"
-    },
-    {
-      "id": "pret_combustibili",
-      "label": "Preț combustibili",
-      "value": "6.89 RON/L",
-      "change": "+0.23 RON față de anul trecut",
+      "id": "consumption-total",
+      "label": "Consum Intern",
+      "value": "52.7 TWh",
+      "change": "-1.2%",
       "changeType": "negative",
       "icon": "Gauge"
     },
     {
-      "id": "capacitate",
-      "label": "Capacitate instalată",
-      "value": "18.2 GW",
-      "change": "+0.9 GW față de anul trecut",
+      "id": "renewables-share",
+      "label": "Pondere Energie Verde",
+      "value": "36%",
+      "change": "+3.1%",
+      "changeType": "positive",
+      "icon": "Leaf"
+    },
+    {
+      "id": "investment-amount",
+      "label": "Investiții Publice",
+      "value": "4.8 mld. RON",
+      "change": "+12%",
       "changeType": "positive",
       "icon": "Battery"
     }
   ],
-  "chartData": [
-    {
-      "year": "2019",
-      "value": 49800,
-      "budget": 4200000000
-    },
-    {
-      "year": "2020",
-      "value": 48200,
-      "budget": 4500000000
-    },
-    {
-      "year": "2021",
-      "value": 50100,
-      "budget": 5100000000
-    },
-    {
-      "year": "2022",
-      "value": 51300,
-      "budget": 5800000000
-    },
-    {
-      "year": "2023",
-      "value": 51400,
-      "budget": 6200000000
-    },
-    {
-      "year": "2024",
-      "value": 52300,
-      "budget": 6900000000
-    }
-  ]
+"overview": [
+  { "year": "2018", "gdp": 95000, "budget": 2000000000 },
+  { "year": "2019", "gdp": 96000, "budget": 2200000000 },
+  { "year": "2020", "gdp": 94000, "budget": 2300000000 },
+  { "year": "2021", "gdp": 97000, "budget": 2600000000 },
+  { "year": "2022", "gdp": 98000, "budget": 2900000000 },
+  { "year": "2023", "gdp": 99000, "budget": 3100000000 }
+]
 }

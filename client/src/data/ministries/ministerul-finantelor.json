@@ -1,30 +1,68 @@
 {
   "id": "finante",
   "name": "Ministerul Finanțelor",
-  "description": "Responsabil cu bugetul național, fiscalitatea și administrarea fondurilor publice.",
+  "description": "Administrează bugetul de stat, politica fiscală și finanțele publice naționale.",
   "ministries": ["Ministerul Finanțelor"],
   "stats": [
     {
-      "id": "revenue",
-      "label": "Venituri Naționale",
-      "value": "390 MLD RON",
-      "change": "+5.2%",
+      "id": "budget_total",
+      "label": "Buget total",
+      "value": "540 mld RON",
+      "change": "+8.4%",
       "changeType": "positive",
       "icon": "DollarSign"
     },
     {
       "id": "deficit",
       "label": "Deficit bugetar",
-      "value": "5.8%",
-      "change": "-0.3%",
+      "value": "3.4%",
+      "change": "-0.3pp",
+      "changeType": "positive",
+      "icon": "TrendingDown"
+    },
+    {
+      "id": "revenue",
+      "label": "Venituri fiscale",
+      "value": "420 mld RON",
+      "change": "+5.2%",
+      "changeType": "positive",
+      "icon": "Gauge"
+    },
+    {
+      "id": "debt",
+      "label": "Datorie publică",
+      "value": "48% din PIB",
+      "change": "-1.1%",
       "changeType": "positive",
       "icon": "AlertTriangle"
     }
   ],
-  "chartData": [
-    { "year": "2020", "value": 320000000, "budget": 370000000 },
-    { "year": "2021", "value": 350000000, "budget": 400000000 },
-    { "year": "2022", "value": 370000000, "budget": 420000000 },
-    { "year": "2023", "value": 390000000, "budget": 450000000 }
+  "overviewData": [
+    { "year": "2018", "students": 0, "teachers": 0, "budget": 290000000000, "schools": 0 },
+    { "year": "2019", "students": 0, "teachers": 0, "budget": 310000000000, "schools": 0 },
+    { "year": "2020", "students": 0, "teachers": 0, "budget": 370000000000, "schools": 0 },
+    { "year": "2021", "students": 0, "teachers": 0, "budget": 420000000000, "schools": 0 },
+    { "year": "2022", "students": 0, "teachers": 0, "budget": 490000000000, "schools": 0 },
+    { "year": "2023", "students": 0, "teachers": 0, "budget": 540000000000, "schools": 0 }
+  ],
+  "evolutionData": [
+    { "year": "2018", "performance": 0, "access": 0, "resources": 300000000000, "quality": 60000000000 },
+    { "year": "2019", "performance": 0, "access": 0, "resources": 310000000000, "quality": 65000000000 },
+    { "year": "2020", "performance": 0, "access": 0, "resources": 320000000000, "quality": 70000000000 },
+    { "year": "2021", "performance": 0, "access": 0, "resources": 350000000000, "quality": 75000000000 },
+    { "year": "2022", "performance": 0, "access": 0, "resources": 380000000000, "quality": 80000000000 },
+    { "year": "2023", "performance": 0, "access": 0, "resources": 400000000000, "quality": 85000000000 }
+  ],
+  "budgetDistribution": [
+    { "name": "Salarii", "value": 160000000000, "color": "#10b981" },
+    { "name": "Bunuri și servicii", "value": 100000000000, "color": "#3b82f6" },
+    { "name": "Investiții capitale", "value": 120000000000, "color": "#f59e0b" },
+    { "name": "Transferuri", "value": 160000000000, "color": "#ef4444" }
+  ],
+  "budgetComparison": [
+    { "quarter": "T1", "planned": 120000000000, "executed": 110000000000 },
+    { "quarter": "T2", "planned": 140000000000, "executed": 130000000000 },
+    { "quarter": "T3", "planned": 150000000000, "executed": 140000000000 },
+    { "quarter": "T4", "planned": 160000000000, "executed": 155000000000 }
   ]
 }
